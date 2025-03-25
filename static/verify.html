@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥欣TKS达人AI建联系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .hidden {
+            display: none !important;
+        }
+        body {
+            background-color: rgb(245,245,245);
+        }
+        .top-slider {
+            box-sizing: border-box;
+            background-color: #121212;
+            height: 60px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .top-slider .top-left-slider {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0px 16px;
+            min-width: 280px;
+        }
+        
+        .top-slider img {
+            height: 36px;
+        }
+        .arco-divider-vertical {
+            border-left: 1px solid rgba(0, 0, 0, .1);
+            display: inline-block;
+            height: 1em;
+            margin: 0;
+            max-width: 1px;
+            min-width: 1px;
+            vertical-align: middle;
+        }
+        .top-slider .top-left-slider .arco-divider-vertical {
+            color: rgb(255, 255, 255);
+            margin: 0px 16px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .top-slider .top-left-slider span {
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            user-select: none;
+        }
+        
+        .login-container {
+            max-width: 1000px; 
+            margin: 70px auto 0;
+            display: flex;
+            position: relative;
+            left: 100px;
+        }
+
+        .login-container .select-board {
+            display: flex;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            border-radius: 8px;
+            padding-right: 40px;
+        }
+        .login-container .select-board .form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: space-evenly;
+        }
+        input {
+            color: #191d32;
+            height: 43px;
+            width: 450px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 43px;
+            border: 1px solid #ccc; 
+        }
+        
+        input:hover {
+            border-color: rgb(0, 153, 149);
+        }
+        input:focus {
+            border-color: rgb(0, 153, 149);
+            outline: none; 
+        }
+        .login-button {
+            background-color: rgb( 0, 153, 149);
+            border: none;
+            height: 44px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            line-height: 44px;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: rgb(2, 131, 128);
+        }
+        .tips {
+            color: rgb(0, 153, 149);
+        }
+        /* #region 加载动画 */
+        .load-gif {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10000000; 
+            padding: 20px; 
+            width: 200px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .load-overlay {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色背景 */
+            z-index: 10000; /* 确保它在其他内容之上，但在.load-gif之下 */
+        }
+        .load-gif span {
+            color: #fff;
+            font-size: 16px;
+        }
+        .lds-spinner,
+        .lds-spinner div,
+        .lds-spinner div:after {
+        box-sizing: border-box;
+        }
+        .lds-spinner {
+        color: #fff;
+        width: 80px;
+        height: 80px;
+        left: 450px;
+        }
+
+        .lds-spinner div {
+        transform-origin: 40px 40px;
+        animation: lds-spinner 1.2s linear infinite;
+        }
+        .lds-spinner div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 3.2px;
+        left: 36.8px;
+        width: 6.4px;
+        height: 17.6px;
+        border-radius: 20%;
+        background: currentColor;
+        }
+        .lds-spinner div:nth-child(1) {
+        transform: rotate(0deg);
+        animation-delay: -1.1s;
+        }
+        .lds-spinner div:nth-child(2) {
+        transform: rotate(30deg);
+        animation-delay: -1s;
+        }
+        .lds-spinner div:nth-child(3) {
+        transform: rotate(60deg);
+        animation-delay: -0.9s;
+        }
+        .lds-spinner div:nth-child(4) {
+        transform: rotate(90deg);
+        animation-delay: -0.8s;
+        }
+        .lds-spinner div:nth-child(5) {
+        transform: rotate(120deg);
+        animation-delay: -0.7s;
+        }
+        .lds-spinner div:nth-child(6) {
+        transform: rotate(150deg);
+        animation-delay: -0.6s;
+        }
+        .lds-spinner div:nth-child(7) {
+        transform: rotate(180deg);
+        animation-delay: -0.5s;
+        }
+        .lds-spinner div:nth-child(8) {
+        transform: rotate(210deg);
+        animation-delay: -0.4s;
+        }
+        .lds-spinner div:nth-child(9) {
+        transform: rotate(240deg);
+        animation-delay: -0.3s;
+        }
+        .lds-spinner div:nth-child(10) {
+        transform: rotate(270deg);
+        animation-delay: -0.2s;
+        }
+        .lds-spinner div:nth-child(11) {
+        transform: rotate(300deg);
+        animation-delay: -0.1s;
+        }
+        .lds-spinner div:nth-child(12) {
+        transform: rotate(330deg);
+        animation-delay: 0s;
+        }
+        @keyframes lds-spinner {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+        }
+        /* #endregion 加载动画 */
+
+    </style>
+</head>
+<body>
+    <div class="load-overlay hidden"></div>
+    <div class="load-gif hidden">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <span>loading...</span>
+    </div>
+    <div class="top-slider">
+        <div class="top-left-slider">
+            <img src="logo.jpg" alt="logo">
+            <div role="separator" class="arco-divider-vertical"></div>
+            <span>奥欣TKS达人AI建联系统</span>
+        </div>
+    </div>
+    <div class="login-container">
+        <div class="select-board">
+            <img src="login.svg" alt="login">
+            <div class="form">
+                <span>
+                    <span>请注意: 为了您的账号安全，验证码已发送至 </span>
+                    <span class="tips"></span>
+                </span>
+                <span>店铺地区</span>
+                <input type="text" placeholder="请输入店铺所属地区，如：马来西亚、新加坡、菲律宾、越南、泰国" class="region">
+                <span>验证码</span>
+                <input type="text" placeholder="请输入验证码" class="input-verify">
+                <div class="login-button">登录</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // window.onload = function() {
+        //     const email = sessionStorage.getItem('email');
+        //     // console.log(email+'123')
+        // }
+
+        const myHeaders = {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br, zstd",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Connection": "keep-alive",
+            "Content-Length": "128",
+            "Content-Type": "application/json",
+            "Host": "localhost:5000",
+            "Origin": "http://127.0.0.1:5500",
+            "Referer": "http://127.0.0.1:5500/",
+            "Sec-Ch-Ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\"",
+            "Sec-Ch-Ua-Mobile": "?0",
+            "Sec-Ch-Ua-Platform": "\"Windows\"",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "cross-site",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+        }
+        const email = sessionStorage.getItem('email');
+        const tips=document.querySelector('.tips')
+        tips.innerHTML+=email
+        const countryCodesMap = new Map([
+            ['马来西亚', 'MY'],
+            ['菲律宾', 'PH'],
+            ['新加坡', 'SG'],
+            ['泰国', 'TH'],
+            ['越南', 'VN']
+            ]);
+        const submitLogin=document.querySelector('.login-button')
+        const loadOverlay=document.querySelector('.load-overlay')
+        const loadGif=document.querySelector('.load-gif')
+        submitLogin.addEventListener('click',async function(){
+            const verifyInput=document.querySelector('.input-verify')
+            const region=document.querySelector('.region')
+            console.log(region.value)
+            loadOverlay.classList.remove('hidden')
+            loadGif.classList.remove('hidden')
+            const selectCountries = ["马来西亚", "新加坡", "菲律宾", "泰国", "越南"];
+            if(selectCountries.includes(region.value)){
+                let login_response = await fetch("http://localhost:5000/verify", {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: JSON.stringify({'verify':verifyInput.value,'email':email,'region':countryCodesMap.get(region.value)})
+                });
+                if (login_response.ok) {
+                    loadOverlay.classList.add('hidden')
+                    loadGif.classList.add('hidden')
+                    var option = await login_response.json();
+                    if(option.status==='success'){
+                        console.log('登录成功')
+                        window.location.href = "relationMain.html"
+                    }else if(option.status==='fail'){
+                        alert("请重新登录系统")
+                    }else if(option.status==='请重试'){
+                        alert("验证码错误")
+                    }
+                }
+            }else{
+                alert("请输入正确国家，如：马来西亚，本系统目前仅支持举例中的5个国家")
+                loadOverlay.classList.add('hidden')
+                loadGif.classList.add('hidden')
+            }
+        })
+    </script>
+</body>
+</html>

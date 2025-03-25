@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥欣TKS达人AI建联系统</title>
+    <link rel="stylesheet" href="rmain.css">
+</head>
+<body>
+    <div class="load-overlay hidden"></div>
+    <div class="load-gif hidden">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <span>loading...</span>
+    </div>
+    <div class="top-slider">
+        <div class="top-left-slider">
+            <img src="logo.jpg" alt="logo">
+            <div role="separator" class="arco-divider-vertical"></div>
+            <span>奥欣TKS达人AI建联系统</span>
+        </div>
+        <div class="top-right-slider">
+            <img src="" alt="" id="user-logo">    
+            <!-- <img src="userlogo.jpeg" alt="" id="user-logo">     -->
+            <div class="shop-select">
+                <span class="shop-name">MY</span>
+                <span>店铺</span>
+                <svg class="theme-arco-icon theme-arco-icon-down " width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2206 5.43846C12.0905 5.30829 11.8794 5.30829 11.7492 5.43846L7.99997 9.18774L4.25071 5.43846C4.12053 5.30829 3.90948 5.30829 3.7793 5.43846L3.3079 5.90987C3.17772 6.04004 3.17772 6.2511 3.3079 6.38127L7.52856 10.602C7.78891 10.8623 8.21102 10.8623 8.47137 10.602L12.692 6.38127C12.8222 6.2511 12.8222 6.04004 12.692 5.90987L12.2206 5.43846Z" fill-opacity="1"></path></svg>
+            </div>
+        </div>
+    </div>
+    <div class="top-right-slider-region region-hidden">
+        <ul>
+            <li>
+                <input type="radio" id="MY" value="MY" name="region-select-radio" class="region-select-radio">
+                <label for="MY">马来西亚 (MY)</label>
+            </li>
+            <li>
+                <input type="radio" id="TH" value="TH" name="region-select-radio" class="region-select-radio">
+                <label for="TH">泰国(TH)</label>
+            </li>
+            <li>
+                <input type="radio" id="VN" value="VN" name="region-select-radio" class="region-select-radio">
+                <label for="VN">越南(VN)</label>
+            </li>
+            <li>
+                <input type="radio" id="PH" value="PH" name="region-select-radio" class="region-select-radio">
+                <label for="PH">菲律宾(PH)</label>
+            </li>
+            <li>
+                <input type="radio" id="SG" value="SG" name="region-select-radio" class="region-select-radio">
+                <label for="SG">新加坡(SG)</label>
+            </li>
+        </ul>
+    </div>
+    <div class="left-slider">
+        <ul class="menu">
+            <li class="request menu-active" data-id="1">达人数据采集</li>
+            <li data-id="2">达人筛选与邀请</li>
+            <li data-id="3">达人合作情况</li>
+        </ul>
+    </div>
+    <div class="main-content-box">
+        <div class="box box1 load-data hidden unhidden">
+            <div class="title">达人数据采集</div>
+            <div class="load-condition">
+                <ul>
+                    <li>更新时间</li>
+                    <li>
+                        <input type="radio" id="none-day" value="none-day" name="update-time">
+                        <label for="none-day">该账号未采集过</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="three-day" value="three-day" name="update-time">
+                        <label for="three-day">3天</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="week" value="week" name="update-time">
+                        <label for="week">1周</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="month" value="month" name="update-time">
+                        <label for="month">1月</label>
+                    </li>
+                </ul>
+                <div class="submit-button">开始更新</div>
+            </div>
+            <div class="finish hidden">已完成采集,可前往达人筛选与回复模块</div>
+        </div>
+        <div class="box box2 send-data hidden">
+            <div class="title">达人筛选与邀请</div>
+            <div class="select-box">
+                <div class="select-title">筛选条件</div>
+                <div class="select-option">
+                    <ul>
+                        <li data-id="201">
+                            <span class="describe">商品类目</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-201">
+                                <ul>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="jvriyong" value="居家日用">
+                                            <label for="jvriyong">居家日用</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="chufangyongpin" value="厨房用品">
+                                            <label for="chufangyongpin">厨房用品</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="jiabanbuyi" value="家纺布艺">
+                                            <label for="jiabanbuyi">家纺布艺</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="jiadian" value="家电">
+                                            <label for="jiadian">家电</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="nvzhuangyuxiaoshini" value="女装与女士内衣">
+                                            <label for="nvzhuangyuxiaoshini">女装与女士内衣</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="musilinfashion" value="穆斯林时尚">
+                                            <label for="musilinfashion">穆斯林时尚</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="xiebao" value="鞋靴">
+                                            <label for="xiebao">鞋靴</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="meizhuanggeihu" value="美妆个护">
+                                            <label for="meizhuanggeihu">美妆个护</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="shoujivshuma" value="手机与数码">
+                                            <label for="shoujivshuma">手机与数码</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="diannaobangong" value="电脑办公">
+                                            <label for="diannaobangong">电脑办公</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="chongwuyongpin" value="宠物用品">
+                                            <label for="chongwuyongpin">宠物用品</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="muyingyongpin" value="母婴用品">
+                                            <label for="muyingyongpin">母婴用品</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="yundongyuhuwai" value="运动与户外">
+                                            <label for="yundongyuhuwai">运动与户外</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="wanjuhevihao" value="玩具和爱好">
+                                            <label for="wanjuhevihao">玩具和爱好</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="jiaju" value="家具">
+                                            <label for="jiaju">家具</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="wujvngongju" value="五金工具">
+                                            <label for="wujvngongju">五金工具</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="jianzhucailiao" value="家装建材">
+                                            <label for="jianzhucailiao">家装建材</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="qicheyumotuoche" value="汽车与摩托车">
+                                            <label for="qicheyumotuoche">汽车与摩托车</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="shishangfujian" value="时尚配件">
+                                            <label for="shishangfujian">时尚配件</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="baojian" value="保健">
+                                            <label for="baojian">保健</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="ertongfashion" value="儿童时尚">
+                                            <label for="ertongfashion">儿童时尚</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="nanzhuangyuxiaoshiner" value="男装与男士内衣">
+                                            <label for="nanzhuangyuxiaoshiner">男装与男士内衣</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="xiangbao" value="箱包">
+                                            <label for="xiangbao">箱包</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="shoucangpin" value="收藏品">
+                                            <label for="shoucangpin">收藏品</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="category">
+                                            <input type="checkbox" id="zhubaovyushengyansi" value="珠宝与衍生品">
+                                            <label for="zhubaovyushengyansi">珠宝与衍生品</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li data-id="202">
+                            <span class="describe">粉丝数</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <!-- 在.box2的data-id=202的.details元素内添加 -->
+                            <div class="details hidden select-box-202">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input fans" value="0" min="0" max="10000000" step="1">
+                                        <span>-</span>
+                                        <input type="number" class="max-input fans" value="10000000" min="0" max="10000000" step="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-id="203">
+                            <span class="describe">中位佣金率</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-203">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input commission-rate" value="0.00" min="0" max="1.00" step="0.01">
+                                        <span>-</span>
+                                        <input type="number" class="max-input commission-rate" value="1.00" min="0" max="1.00" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-id="204">
+                            <span class="describe">视频GMV</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-204">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input GMV" value="0" min="0" max="2027980" step="1000">
+                                        <span>-</span>
+                                        <input type="number" class="max-input GMV" value="2027980" min="0" max="2027980" step="1000">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li data-id="205">
+                            <span class="describe">平均视频播放量</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-205">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input video-play-num" value="0" min="0" max="2833300" step="1000">
+                                        <span>-</span>
+                                        <input type="number" class="max-input video-play-num" value="2833300" min="0" max="2833300" step="1000">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li data-id="206">
+                            <span class="describe">推广产品数量</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-206">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input promote-product-num" value="0" min="0" max="1000" step="10">
+                                        <span>-</span>
+                                        <input type="number" class="max-input promote-product-num" value="1000" min="0" max="1000" step="10">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li data-id="207">
+                            <span class="describe">视频发布次数</span>
+                            <svg class="alliance-icon alliance-icon-ArrowDown flex flex-shrink-0" width="1em" height="1em" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.038 4.687a.551.551 0 10-.736-.82L6 7.728 1.698 3.866a.551.551 0 00-.736.82l4.612 4.141a.557.557 0 00.852 0l4.612-4.14z"></path></svg>
+                            <div class="details hidden select-box-207">
+                                <div class="range-container">
+                                    <div class="range-inputs">
+                                        <input type="number" class="min-input video-publish-num" value="0" min="0" max="3000" step="100">
+                                        <span>-</span>
+                                        <input type="number" class="max-input video-publish-num" value="3000" min="0" max="3000" step="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check">
+                                <input type="checkbox" name="" id="is-invite">
+                                <label for="is-invite" class="describe">过去90天内邀请过</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="select-button">
+                    <li class="reset-condition-button">重置条件</li>
+                    <li class="start-filter-button">开始筛选</li>
+                </ul>
+            </div>
+            <!-- <div class="sort-reason"> -->
+            <div class="sort-reason hidden">
+                <span class="sort-describe-flex">排序依据</span>
+                <span class="sort-box">
+                    <span class="sort-reason-result">商品交易总额</span>
+                    <svg class="icon" style="width: 1.7685546875em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1811 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4799"><path d="M835.505231 938.929231l-779.815385-779.815385A78.769231 78.769231 0 0 1 167.069538 47.812923L891.195077 771.938462 1615.241846 47.812923A78.769231 78.769231 0 0 1 1726.621538 159.113846l-779.815384 779.815385a78.769231 78.769231 0 0 1-111.300923 0z" fill="#45BD5A" p-id="4800"></path></svg>
+                    <ul class="sort-reason-box hidden">
+                        <li class="mark">商品交易总额</li>
+                        <li>粉丝数</li>
+                        <li>成交件数</li>
+                        <li>智能推荐</li>
+                    </ul>
+                </span>
+            </div>
+            <!-- <div class="display-creator-box"> -->
+            <div class="display-creator-box hidden">
+                <table id="sort-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox">
+                                <span>已选中</span>
+                                <span class="check-num">0</span>
+                                <span>人</span>
+                            </th>
+                            <th>达人</th>
+                            <th>商品交易总额</th>
+                            <th>推广产品数量</th>
+                            <th>平均视频播放量</th>
+                            <th>佣金率</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                                <span class="rank">1</span>
+                            </td>
+                            <td>达人A</td>
+                            <td>¥10,000</td>
+                            <td>5</td>
+                            <td>20,000</td>
+                            <td>5%</td>
+                            <td>
+                                <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552"><path d="M510.5278 131.208c181.168 0 346.344 110.536 495.52 331.632a87.872 87.872 0 0 1 3.296 93.032l-3.296 5.272-8.36 12.192c-146.976 213.024-309.36 319.504-487.168 319.44-181.248 0-346.424-110.544-495.52-331.632a87.888 87.888 0 0 1-3.296-92.928l3.296-5.376 8.352-12.088c146.912-213.032 309.304-319.544 487.176-319.544z m0 87.888c-145.216 0-282.968 90.28-414.672 281.096l-8.016 11.864 8.128 11.752c131.816 190.912 269.456 281.096 414.56 281.096 145.104 0 282.848-90.296 414.568-281.096l8.568-11.752-8.024-11.864c-132.368-190.92-270-281.096-415.112-281.096z m0 106.432c107.256-1.304 195.272 84.576 196.568 191.84 1.312 107.272-84.584 195.28-191.848 196.576a30.984 30.984 0 0 1-4.72 0c-107.264 0-194.216-86.952-194.216-194.2 0.008-107.256 86.96-194.216 194.216-194.216z m0 87.88c-58.728-0.968-107.12 45.848-108.096 104.576-0.968 58.72 45.848 107.12 104.576 108.088 1.168 0.104 2.344 0.104 3.512 0 58.72-0.016 106.312-47.64 106.296-106.368-0.008-58.704-47.592-106.28-106.288-106.296z" fill="#17A29E" p-id="2553"></path></svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                                <span class="rank">2</span>
+                            </td>
+                            <td>Farisya Humaira</td>
+                            <td>¥10,000</td>
+                            <td>5</td>
+                            <td>20,000</td>
+                            <td>5%</td>
+                            <td>
+                                <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552"><path d="M510.5278 131.208c181.168 0 346.344 110.536 495.52 331.632a87.872 87.872 0 0 1 3.296 93.032l-3.296 5.272-8.36 12.192c-146.976 213.024-309.36 319.504-487.168 319.44-181.248 0-346.424-110.544-495.52-331.632a87.888 87.888 0 0 1-3.296-92.928l3.296-5.376 8.352-12.088c146.912-213.032 309.304-319.544 487.176-319.544z m0 87.888c-145.216 0-282.968 90.28-414.672 281.096l-8.016 11.864 8.128 11.752c131.816 190.912 269.456 281.096 414.56 281.096 145.104 0 282.848-90.296 414.568-281.096l8.568-11.752-8.024-11.864c-132.368-190.92-270-281.096-415.112-281.096z m0 106.432c107.256-1.304 195.272 84.576 196.568 191.84 1.312 107.272-84.584 195.28-191.848 196.576a30.984 30.984 0 0 1-4.72 0c-107.264 0-194.216-86.952-194.216-194.2 0.008-107.256 86.96-194.216 194.216-194.216z m0 87.88c-58.728-0.968-107.12 45.848-108.096 104.576-0.968 58.72 45.848 107.12 104.576 108.088 1.168 0.104 2.344 0.104 3.512 0 58.72-0.016 106.312-47.64 106.296-106.368-0.008-58.704-47.592-106.28-106.288-106.296z" fill="#17A29E" p-id="2553"></path></svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                                <span class="rank">3</span>
+                            </td>
+                            <td>达人A</td>
+                            <td>¥10,000</td>
+                            <td>5</td>
+                            <td>20,000</td>
+                            <td>5%</td>
+                            <td>
+                                <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552"><path d="M510.5278 131.208c181.168 0 346.344 110.536 495.52 331.632a87.872 87.872 0 0 1 3.296 93.032l-3.296 5.272-8.36 12.192c-146.976 213.024-309.36 319.504-487.168 319.44-181.248 0-346.424-110.544-495.52-331.632a87.888 87.888 0 0 1-3.296-92.928l3.296-5.376 8.352-12.088c146.912-213.032 309.304-319.544 487.176-319.544z m0 87.888c-145.216 0-282.968 90.28-414.672 281.096l-8.016 11.864 8.128 11.752c131.816 190.912 269.456 281.096 414.56 281.096 145.104 0 282.848-90.296 414.568-281.096l8.568-11.752-8.024-11.864c-132.368-190.92-270-281.096-415.112-281.096z m0 106.432c107.256-1.304 195.272 84.576 196.568 191.84 1.312 107.272-84.584 195.28-191.848 196.576a30.984 30.984 0 0 1-4.72 0c-107.264 0-194.216-86.952-194.216-194.2 0.008-107.256 86.96-194.216 194.216-194.216z m0 87.88c-58.728-0.968-107.12 45.848-108.096 104.576-0.968 58.72 45.848 107.12 104.576 108.088 1.168 0.104 2.344 0.104 3.512 0 58.72-0.016 106.312-47.64 106.296-106.368-0.008-58.704-47.592-106.28-106.288-106.296z" fill="#17A29E" p-id="2553"></path></svg>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- <div class="display-creator-details-mask-box"> -->
+            <div class="display-creator-details-mask-box hidden">
+                <div class="display-creator-details-box">
+                    <svg class="icon fork" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2930"><path d="M761.1 782.4c-6.4 0-12.8-2.4-17.7-7.3L253.2 284.8c-9.8-9.8-9.8-25.6 0-35.4 9.8-9.8 25.6-9.8 35.4 0l490.2 490.2c9.8 9.8 9.8 25.6 0 35.4-4.9 4.9-11.3 7.4-17.7 7.4z" fill="#0CC6BF" p-id="2931"></path><path d="M270.9 782.4c-6.4 0-12.8-2.4-17.7-7.3-9.8-9.8-9.8-25.6 0-35.4l490.2-490.2c9.8-9.8 25.6-9.8 35.4 0 9.8 9.8 9.8 25.6 0 35.4L288.6 775c-4.9 4.9-11.3 7.4-17.7 7.4z" fill="#0CC6BF" p-id="2932"></path></svg>
+                    <div class="craetor-name">mommyawisy2509</div>
+                    <ul>
+                        <li>
+                            <span class="key">视频的互动参与度</span>
+                            <span class="value">166</span>
+                        </li>
+                        <li>
+                            <span class="key">粉丝数</span>
+                            <span class="value">166122</span>
+                        </li>
+                        <li>
+                            <span class="key">直播次数（最近30天）</span>
+                            <span class="value">166</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="send-info-box hidden">
+                <div class="input-info-box">
+                    <textarea data-e2e="798845f5-2eb9-0980" placeholder="发送消息" class="index-module__textarea--ypMLj"></textarea>
+                    <div data-e2e="db9a596e-669c-6ec5" class="index-module__footer--mSGEi"><div data-e2e="1fd01537-a2c9-1fe3" class="index-module__send--8FbXJ"><div data-e2e="6981c08f-68cc-5df6" class="index-module__limit--hJe4T"><span data-e2e="76868bb0-0a54-15ad" class="">0</span>/2000</div><button data-tid="m4b_button" data-e2e="55f52c38-fed6-9128" class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square m4b-button" type="button"><span>发送</span></button></div></div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="box box3 collaborated-data hidden">
+            <div class="title">达人合作情况</div>
+            <div class="has-collaborated-select-box">
+                <ul>
+                    <li>联系过的达人</li>
+                    <li>等待合作</li>
+                    <li>已合作</li>
+                    <li>重新获取合作信息</li>
+                </ul>
+            </div>
+            <div class="show-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>达人昵称</th>
+                            <th>创建时间</th>
+                            <th>发送信息</th>
+                            <th>合作情况</th>
+                            <th>历史详情</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>mommyawisy2509</td>
+                            <td>2025-02-15 22:40:16</td>
+                            <td>
+                                <div class="scrollable-content">
+                                    hello
+                                </div>
+                            </td>
+                            <td>已合作</td>
+                            <td>
+                                <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552"><path d="M510.5278 131.208c181.168 0 346.344 110.536 495.52 331.632a87.872 87.872 0 0 1 3.296 93.032l-3.296 5.272-8.36 12.192c-146.976 213.024-309.36 319.504-487.168 319.44-181.248 0-346.424-110.544-495.52-331.632a87.888 87.888 0 0 1-3.296-92.928l3.296-5.376 8.352-12.088c146.912-213.032 309.304-319.544 487.176-319.544z m0 87.888c-145.216 0-282.968 90.28-414.672 281.096l-8.016 11.864 8.128 11.752c131.816 190.912 269.456 281.096 414.56 281.096 145.104 0 282.848-90.296 414.568-281.096l8.568-11.752-8.024-11.864c-132.368-190.92-270-281.096-415.112-281.096z m0 106.432c107.256-1.304 195.272 84.576 196.568 191.84 1.312 107.272-84.584 195.28-191.848 196.576a30.984 30.984 0 0 1-4.72 0c-107.264 0-194.216-86.952-194.216-194.2 0.008-107.256 86.96-194.216 194.216-194.216z m0 87.88c-58.728-0.968-107.12 45.848-108.096 104.576-0.968 58.72 45.848 107.12 104.576 108.088 1.168 0.104 2.344 0.104 3.512 0 58.72-0.016 106.312-47.64 106.296-106.368-0.008-58.704-47.592-106.28-106.288-106.296z" fill="#17A29E" p-id="2553"></path></svg>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mommyawisy2509</td>
+                            <td>2025-02-15 22:40:16</td>
+                            <td>
+                                <div class="scrollable-content">
+                                    Hello {{creators username}}，
+We are a beauty and personal care brand and would be thrilled to collaborate with you. We admire your work and think our product would resonate well with your audience. We are offering free samples and a commission-based partnership. If you are interested, please feel free to reach out to discuss the details.
+Looking forward to your response.
+Kind regards,
+OYAN Beauty
+                                </div>
+                            </td>
+                            <td>已合作</td>
+                            <td>
+                                <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552"><path d="M510.5278 131.208c181.168 0 346.344 110.536 495.52 331.632a87.872 87.872 0 0 1 3.296 93.032l-3.296 5.272-8.36 12.192c-146.976 213.024-309.36 319.504-487.168 319.44-181.248 0-346.424-110.544-495.52-331.632a87.888 87.888 0 0 1-3.296-92.928l3.296-5.376 8.352-12.088c146.912-213.032 309.304-319.544 487.176-319.544z m0 87.888c-145.216 0-282.968 90.28-414.672 281.096l-8.016 11.864 8.128 11.752c131.816 190.912 269.456 281.096 414.56 281.096 145.104 0 282.848-90.296 414.568-281.096l8.568-11.752-8.024-11.864c-132.368-190.92-270-281.096-415.112-281.096z m0 106.432c107.256-1.304 195.272 84.576 196.568 191.84 1.312 107.272-84.584 195.28-191.848 196.576a30.984 30.984 0 0 1-4.72 0c-107.264 0-194.216-86.952-194.216-194.2 0.008-107.256 86.96-194.216 194.216-194.216z m0 87.88c-58.728-0.968-107.12 45.848-108.096 104.576-0.968 58.72 45.848 107.12 104.576 108.088 1.168 0.104 2.344 0.104 3.512 0 58.72-0.016 106.312-47.64 106.296-106.368-0.008-58.704-47.592-106.28-106.288-106.296z" fill="#17A29E" p-id="2553"></path></svg>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="display-collaborated-details-mask-box hidden">
+                <div class="display-collaborated-details-box">
+                    <svg class="icon fork" style="width: 2em;height: 2em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2930"><path d="M761.1 782.4c-6.4 0-12.8-2.4-17.7-7.3L253.2 284.8c-9.8-9.8-9.8-25.6 0-35.4 9.8-9.8 25.6-9.8 35.4 0l490.2 490.2c9.8 9.8 9.8 25.6 0 35.4-4.9 4.9-11.3 7.4-17.7 7.4z" fill="#0CC6BF" p-id="2931"></path><path d="M270.9 782.4c-6.4 0-12.8-2.4-17.7-7.3-9.8-9.8-9.8-25.6 0-35.4l490.2-490.2c9.8-9.8 25.6-9.8 35.4 0 9.8 9.8 9.8 25.6 0 35.4L288.6 775c-4.9 4.9-11.3 7.4-17.7 7.4z" fill="#0CC6BF" p-id="2932"></path></svg>
+                    <div class="creator-name">mommyawisy2509</div>
+                    <span>系统发送日志</span>
+                    <ul class="details">
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="text">hello</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="text">hello</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="text">hello</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                    </ul>
+                    <span>合作检查日志</span>
+                    <ul class="check">
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                        <li>
+                            <span class="update">2025-02-15 22:40:16</span>
+                            <span class="has-collaborated">已合作</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="rmain.js"></script>
+</body>
+</html>
